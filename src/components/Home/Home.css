@@ -1,0 +1,10 @@
+h1 {
+    color: black;
+}
+
+.home {
+    border: 1px solid;
+    width: 400px;
+    height: 500px;
+    margin-top: 50px;
+}

@@ -5,7 +5,7 @@ import { increament, decreament } from '../../redux/store'
 
 function Display() {
 
-    let count = useSelector((state) => { return state.value })
+    let count = useSelector((state) => { return state.count.value })
 
     console.log(count);
 

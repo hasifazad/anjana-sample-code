@@ -14,6 +14,7 @@ import Display from './components/Display/Display'
 import { Provider } from 'react-redux'
 import { store } from './redux/store'
 import MovieList from './components/MovieList/MovieList'
+import Details from './components/Details/Details'
 
 
 export let countContext = createContext()
@@ -53,6 +54,7 @@ function App() {
                             <Route path='/view/:id' element={<View data={{ users }} />} />
                             <Route path='/display' element={<Display />} />
                             <Route path='/movies' element={<MovieList />} />
+                            <Route path='/details/:id' element={<Details />} />
                             <Route path='/*' element={<h1>ERROR </h1>} />
 
                         </Routes>

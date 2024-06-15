@@ -1,4 +1,4 @@
-import { createSlice, configureStore } from '@reduxjs/toolkit';
+import { createSlice, configureStore, combineReducers } from '@reduxjs/toolkit';
 
 
 
@@ -23,13 +23,39 @@ let slice = createSlice({
     }
 })
 
+let movieSlice = createSlice({
+    name: 'movies',
+    initialState: {
+        value: []
+    },
+    reducers: {
+
+        addMovies: (prevState, action) => {
+
+            console.log(action);
+
+            prevState.value = [...action.payload]
+
+
+
+        }
+
+    }
+})
+
 
 
 export let { increament, decreament } = slice.actions
+export let { addMovies } = movieSlice.actions
+
+let rootReducer = combineReducers({
+    count: slice.reducer,
+    movies: movieSlice.reducer,
+})
 
 
 export let store = configureStore({
-    reducer: slice.reducer
+    reducer: rootReducer
 })
 
 

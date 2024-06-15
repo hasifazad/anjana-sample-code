@@ -9,13 +9,13 @@ function Navbar() {
 
     let { count } = useContext(countContext)
 
-    let num = useSelector((state) => state.value)
+    // let num = useSelector((state) => state.count.value)
 
 
 
     return (
         <div className='navbar'>
-            <h1>Hello world  -  {num}</h1>
+            {/* <h1>Hello world  -  {num}</h1> */}
 
             <Link to='/'>home</Link>
             <Link to='/card'>card</Link>

@@ -21,7 +21,7 @@ function Home() {
     let { count, setCount } = useContext(countContext)
     let nav = useNavigate()
 
-    let num = useSelector((state) => state.value)
+    let movies = useSelector((state) => state.movies.value)
 
 
 
@@ -46,23 +46,26 @@ function Home() {
 
     return (
         <div className='home'>
-            <h1>HOME</h1>
-            <h1>{num}</h1>
-            {/* <h1>{count}</h1> */}
 
-            <button onClick={() => { setCount(count + 1) }}>click</button>
+            <h1>{movies[10].title}</h1>
+            <img src={'https://image.tmdb.org/t/p/w500/' + movies[10].poster_path} height={200} width={100}/>
+                <h1>HOME</h1>
+                {/* <h1>{num}</h1> */}
+                {/* <h1>{count}</h1> */}
 
-            {/* <button onClick={() => { setShow(!show) }}>{show ? 'HIDE' : 'SHOW'}</button> */}
+                <button onClick={() => { setCount(count + 1) }}>click</button>
 
-            <Link to='/card'>CARD</Link>
+                {/* <button onClick={() => { setShow(!show) }}>{show ? 'HIDE' : 'SHOW'}</button> */}
 
-
-
-
-            <button onClick={toHome}>to card</button>
+                <Link to='/card'>CARD</Link>
 
 
-            <></>
+
+
+                <button onClick={toHome}>to card</button>
+
+
+                <></>
         </div>
     )
 }
